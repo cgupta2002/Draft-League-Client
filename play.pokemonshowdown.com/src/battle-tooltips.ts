@@ -767,6 +767,7 @@ export class BattleTooltips {
 			if (move.flags.pulse && ability === 'megalauncher') {
 				text += `<p class="movetag">&#x2713; Pulse <small>(boosted by Mega Launcher)</small></p>`;
 			}
+			
 			if (move.flags.bite && ability === 'strongjaw') {
 				text += `<p class="movetag">&#x2713; Bite <small>(boosted by Strong Jaw)</small></p>`;
 			}
@@ -2182,6 +2183,8 @@ export class BattleTooltips {
 					auraBoosted = 'Fairy Aura';
 				} else if (moveType === 'Dark' && allyAbility === 'Dark Aura') {
 					auraBoosted = 'Dark Aura';
+				} else if (moveType === "Ice" &&allyAbility === "Chilling Aura"){
+					auraBoosted = "Chilling Aura"
 				} else if (allyAbility === 'Aura Break') {
 					auraBroken = true;
 				} else if (allyAbility === 'Battery' && ally !== pokemon && move.category === 'Special') {
@@ -2196,6 +2199,8 @@ export class BattleTooltips {
 				if (!foe || foe.fainted) continue;
 				if (foe.ability === 'Fairy Aura' && moveType === 'Fairy') {
 					auraBoosted = 'Fairy Aura';
+				} else if (foe.ability === 'Chilling Aura' && moveType === 'Ice') {
+					auraBoosted = 'Chilling Aura';
 				} else if (foe.ability === 'Dark Aura' && moveType === 'Dark') {
 					auraBoosted = 'Dark Aura';
 				} else if (foe.ability === 'Aura Break') {
